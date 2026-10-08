@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+
+    <div class="container">
+
+        <a
+            href="index.html"
+            class="navbar-brand fw-bold"
+        >
+            Student Profiling System
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container py-4">
+
+    <h2 class="text-center mb-4">
+        Student Profile Dashboard
+    </h2>
+
+
+    <!-- PERSONAL DETAILS -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+            Personal Details
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Student Name</label>
+
+                    <input
+                        id="name"
+                        class="form-control"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Register Number</label>
+
+                    <input
+                        id="registerNumber"
+                        class="form-control"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Email</label>
+
+                    <input
+                        id="email"
+                        class="form-control"
+                        type="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Phone</label>
+
+                    <input
+                        id="phone"
+                        class="form-control"
+                        type="text"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Date of Birth</label>
+
+                    <input
+                        id="dateOfBirth"
+                        class="form-control"
+                        type="date"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Gender</label>
+
+                    <select
+                        id="gender"
+                        class="form-select"
+                    >
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="col-12 mb-3">
+
+                    <label>Address</label>
+
+                    <textarea
+                        id="address"
+                        class="form-control"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FAMILY DETAILS -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+            Family Details
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Father Name</label>
+
+                    <input
+                        id="fatherName"
+                        class="form-control"
+                        type="text"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Mother Name</label>
+
+                    <input
+                        id="motherName"
+                        class="form-control"
+                        type="text"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Family Income</label>
+
+                    <input
+                        id="familyIncome"
+                        class="form-control"
+                        type="number"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Father Occupation</label>
+
+                    <input
+                        id="fatherOccupation"
+                        class="form-control"
+                        type="text"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Mother Occupation</label>
+
+                    <input
+                        id="motherOccupation"
+                        class="form-control"
+                        type="text"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACADEMIC DETAILS -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-warning">
+            Academic Details
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Current Semester</label>
+
+                    <input
+                        id="semester"
+                        class="form-control"
+                        type="number"
+                        min="1"
+                        max="8"
+                    >
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label>Current CGPA</label>
+
+                    <input
+                        id="cgpa"
+                        class="form-control"
+                        type="number"
+                        min="0"
+                        max="10"
+                        step="0.01"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <h5 class="mt-3">
+                Semester-wise Performance
+            </h5>
+
+            <div id="semesterInputs">
+
+                <div class="row mb-2">
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Semester 1"
+                            id="sem1"
+                        >
+                    </div>
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            step="0.01"
+                            class="form-control"
+                            placeholder="SGPA"
+                            id="sgpa1"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-2">
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Semester 2"
+                            id="sem2"
+                        >
+                    </div>
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            step="0.01"
+                            class="form-control"
+                            placeholder="SGPA"
+                            id="sgpa2"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-2">
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Semester 3"
+                            id="sem3"
+                        >
+                    </div>
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            step="0.01"
+                            class="form-control"
+                            placeholder="SGPA"
+                            id="sgpa3"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-2">
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Semester 4"
+                            id="sem4"
+                        >
+                    </div>
+
+                    <div class="col-6">
+                        <input
+                            type="number"
+                            step="0.01"
+                            class="form-control"
+                            placeholder="SGPA"
+                            id="sgpa4"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ARREARS -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-danger text-white">
+            Arrear History
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-5 mb-3">
+
+                    <label>Arrear Subject</label>
+
+                    <input
+                        id="arrearSubject"
+                        class="form-control"
+                        type="text"
+                    >
+
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+
+                    <label>Semester</label>
+
+                    <input
+                        id="arrearSemester"
+                        class="form-control"
+                        type="number"
+                    >
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <label>Status</label>
+
+                    <select
+                        id="arrearStatus"
+                        class="form-select"
+                    >
+
+                        <option value="Cleared">
+                            Cleared
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CAREER -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-info">
+            Technical Skills & Career
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+
+                <label>Technical Skills</label>
+
+                <input
+                    id="technicalSkills"
+                    class="form-control"
+                    placeholder="Java, HTML, CSS, MongoDB"
+                >
+
+                <small class="text-muted">
+                    Separate skills using commas.
+                </small>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label>Strengths</label>
+
+                <textarea
+                    id="strengths"
+                    class="form-control"
+                ></textarea>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label>Learning Gaps / Weaknesses</label>
+
+                <textarea
+                    id="weaknesses"
+                    class="form-control"
+                ></textarea>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label>Career Path</label>
+
+                <select
+                    id="careerPath"
+                    class="form-select"
+                >
+
+                    <option value="Placement">
+                        Placement
+                    </option>
+
+                    <option value="Higher Studies">
+                        Higher Studies
+                    </option>
+
+                    <option value="Entrepreneurship">
+                        Entrepreneurship
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label>Career Goal</label>
+
+                <textarea
+                    id="careerGoal"
+                    class="form-control"
+                    placeholder="Example: Full Stack Developer"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="text-center mb-5">
+
+        <button
+            onclick="saveStudent()"
+            class="btn btn-success btn-lg"
+        >
+            Save Student Profile
+        </button>
+
+        <button
+            onclick="loadStudents()"
+            class="btn btn-secondary btn-lg"
+        >
+            Refresh
+        </button>
+
+    </div>
+
+
+    <!-- STUDENTS -->
+
+    <div class="card shadow mb-5">
+
+        <div class="card-header bg-dark text-white">
+            Student Profiles
+        </div>
+
+        <div
+            id="studentList"
+            class="card-body"
+        >
+            Loading...
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
